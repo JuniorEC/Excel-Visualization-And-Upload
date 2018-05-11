@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row header-section">
+        <div class="col-md-3">
+					<div ng2FileDrop
+						[ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+						(fileOver)="fileOverBase($event)"
+						[uploader]="uploader"
+						(onFileDrop)="fileDropped($event)"
+						class="well my-drop-zone">
+						Arquivo
+						<ng-content></ng-content>
+					</div>
+				</div>
+		</div>
+</div>
+<!--<table class="sjs-table">
+		<tr *ngFor="let row of data">
+		  <td *ngFor="let val of row">
+			{{val}}
+		  </td>
+		</tr>
+	  </table>
+	-->

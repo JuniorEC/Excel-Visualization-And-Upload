@@ -1,0 +1,124 @@
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
+    <!-- Navbar brand -->
+    <a class="navbar-brand" href="#">JDJ-ONE</a>
+    <!-- Collapse button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="basicExampleNav">
+        <!-- Links -->
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="home">Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="novidades">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="about">About</a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">More</a>
+                <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+        </ul>
+        <!-- Links -->
+        <form class="form-inline">
+            <div class="md-form mt-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+            </div>
+        </form>
+    </div>
+    <!-- Collapsible content -->
+</nav>
+<br>
+<br>
+<br>
+<!--/.Navbar-->
+<!-- Main -->
+<main>
+    <div class="row">
+        <div class="col-md-2" >
+                <div class="sidenav" *ngIf="router.url != '/login'">
+                        <ul class="nav  md-pills pills-primary flex-column" role="tablist">
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" routerLink="home" role="tab">Painel
+                                <i class="fa fa-file-text ml-2"></i>
+                              </a>
+                            </li>
+                          <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" routerLink="analitico" role="tab">Analítico
+                              <i class="fa fa-file-text ml-2"></i>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" data-toggle="tab" routerLink="home/empresa" role="tab">Dados gerais
+                              <i class="fa fa-address-card ml-2"></i>
+                            </a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" data-toggle="tab" routerLink="file" role="tab">Uploads
+                              <i class="fa fa-upload ml-2"></i>
+                            </a>
+                          </li>
+                        </ul>
+                    </div>
+        </div>
+        <ng-template  [ngIf]="router.url != '/login'" [ngIfElse]="home" >
+            <div class="col-md-10">
+                <router-outlet></router-outlet>
+            </div>
+        </ng-template>
+        <ng-template #home>
+                <div class="col-md-8">
+                    <router-outlet></router-outlet>
+                </div>
+        </ng-template>
+    </div>
+</main>
+
+<!--Footer-->
+<footer class="page-footer font-small blue pt-4 mt-4">
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <!--First column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">JDJ-ONE</h5>
+                <p>Sistema de gerenciamento de dados.</p>
+            </div>
+            <!--/.First column-->
+            <!--Second column-->
+            <div class="col-md-6">
+                <h5 class="text-uppercase">Links</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="#https://jdjone-ws.herokuapp.com/">API</a>
+                    </li>
+                </ul>
+            </div>
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center">
+        © 2018 Copyright:
+        <a href="https://mdbootstrap.com/material-design-for-bootstrap/"> MDBootstrap.com </a>
+    </div>
+    <!--/.Copyright-->
+</footer>
+<!--/.Footer-->
+                      

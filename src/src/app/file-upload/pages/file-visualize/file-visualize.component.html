@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+  
+      <h5>Drop files</h5>
+			
+			<div class="container">
+					<div class="row header-section">
+							<div class="col-md-3">
+								<div ng2FileDrop
+									[ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+									(fileOver)="fileOverBase($event)"
+									[uploader]="uploader"
+									(onFileDrop)="fileDropped($event)"
+									class="well my-drop-zone">
+									Jogue seu atquivo aqui
+								</div>
+							</div>
+					</div>
+			</div>
+			<div id="grid"></div>
+    </div> 
+</div>
